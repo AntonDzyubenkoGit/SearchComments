@@ -1,9 +1,9 @@
-const getComments = async () => {
-  const response = await fetch('https://jsonplaceholder.typicode.com/comments')
+const getComments = async (data = []) => {
+  await fetch('https://jsonplaceholder.typicode.com/comments')
     .then((response) => response.json())
-    .then((json) => json.slice(0, 15));
+    .then((json) => data.push(...json.slice(0, 5)));
 
-  return response;
+  return data;
 };
 
 export default getComments;
