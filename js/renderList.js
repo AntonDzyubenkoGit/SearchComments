@@ -1,5 +1,5 @@
-const renderList = async (data = []) => {
-  let commentsList = document.querySelector('#comments');
+const renderList = (data = [], commentsList) => {
+  commentsList.innerHTML = null;
 
   data.map((item) => {
     commentsList.innerHTML += `

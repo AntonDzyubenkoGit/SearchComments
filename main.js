@@ -1,39 +1,14 @@
 import renderList from './js/renderList.js';
 import getComments from './js/getComments.js';
+import filterComments from './js/filterComments.js';
+import cleanSearchBar from './js/cleanSearchBar.js';
 
 const comments = await getComments([]);
-renderList(comments);
+const commentsList = document.querySelector('#comments');
+const searchBar = document.querySelector('#search');
+const cleanBarBtn = document.querySelector('#cleanSearchBar');
 
-const search = document.querySelector('#searching');
-let value = '';
+document.addEventListener('load', renderList(comments, commentsList));
 
-search.addEventListener('input', async (e) => {
-  if (e.data) {
-    value += e.data;
-
-    const filterComments = comments.filter((post) => {
-      const body = post.body.toLowerCase();
-      const email = post.email.toLowerCase();
-      const name = post.name.toLowerCase();
-
-      if (
-        body.includes(value.toLowerCase()) ||
-        email.includes(value.toLowerCase()) ||
-        name.includes(value.toLowerCase())
-      ) {
-        return post;
-      }
-    });
-
-    document.querySelector('#comments').innerHTML = null;
-    renderList(filterComments);
-  } else {
-    document.querySelector('#comments').innerHTML = null;
-    renderList(comments);
-  }
-});
-
-document.querySelector('#clearInput').addEventListener('click', () => {
-  search.value = null;
-  renderList(comments);
-});
+filterComments(searchBar, commentsList, comments, renderList);
+cleanSearchBar(cleanBarBtn, commentsList, comments, renderList, searchBar);
