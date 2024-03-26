@@ -1,10 +1,10 @@
 const filterComments = (searchBar, commentsList, comments, renderList) => {
   searchBar.addEventListener('input', () => {
     const searchValue = searchBar.value.trim();
-    let filterComments;
+    let currentComments;
 
     if (searchValue) {
-      filterComments = comments.filter((post) => {
+      currentComments = comments.filter((post) => {
         const body = post.body.toLowerCase();
         const email = post.email.toLowerCase();
         const name = post.name.toLowerCase();
@@ -19,7 +19,7 @@ const filterComments = (searchBar, commentsList, comments, renderList) => {
       });
     }
 
-    searchValue ? renderList(filterComments, commentsList) : renderList(comments, commentsList);
+    searchValue ? renderList(currentComments, commentsList) : renderList(comments, commentsList);
   });
 };
 
