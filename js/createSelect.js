@@ -1,10 +1,18 @@
 const createOptions = (select, optionsList) => {
   const currentOptions = [...new Set(optionsList)];
+
   select.innerHTML = null;
 
-  currentOptions.forEach((item, id) => {
+  const defaultOption = document.createElement('option');
+  defaultOption.value = '';
+  defaultOption.text = 'Select an email address';
+  defaultOption.disabled = true;
+  defaultOption.selected = true;
+  select.append(defaultOption);
+
+  currentOptions.forEach((item) => {
     const option = document.createElement('option');
-    option.value = id;
+    option.value = item.text;
     option.text = item.text;
 
     select.append(option);

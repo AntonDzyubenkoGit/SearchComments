@@ -1,7 +1,8 @@
-const filterComments = (searchBar, commentsList, comments, renderList) => {
+const filterComments = (searchBar, commentsList, comments, renderList, select) => {
+  let currentComments;
+
   searchBar.addEventListener('input', () => {
     const searchValue = searchBar.value.trim();
-    let currentComments;
 
     if (searchValue) {
       currentComments = comments.filter((post) => {
@@ -20,6 +21,23 @@ const filterComments = (searchBar, commentsList, comments, renderList) => {
     }
 
     searchValue ? renderList(currentComments, commentsList) : renderList(comments, commentsList);
+  });
+
+  select.addEventListener('change', () => {
+    const index = select.selectedIndex;
+    const currentValue = select.options[index].value;
+
+    if (currentValue) {
+      searchBar.value = null;
+
+      currentComments = comments.filter((post) => {
+        if (post.email === currentValue) {
+          return post;
+        }
+      });
+    }
+
+    renderList(currentComments, commentsList);
   });
 };
 
