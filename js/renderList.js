@@ -8,7 +8,7 @@ const renderList = (data = [], commentsList) => {
           <a class="card-link" href="mailto:${item.email}" id="email">${item.email}</a>
           <h5 class="card-title">${item.name}</h5>
           <p class="card-text">${item.body}</p>
-          <a href="/comment/index.html?id=${item.id}" class="btn btn-primary mt-3">Go somewhere</a>
+          <a href="/SearchComments/comment/index.html?id=${item.id}" class="btn btn-primary mt-3">Go somewhere</a>
         </div>
       </li>`;
   });
