@@ -8,7 +8,7 @@ const comment = await getComment({}, id);
 
 container.innerHTML = `
     <h1>${comment.name}</h1>
-    <a href="email">${comment.email}</a>
+    <a href="mailto:${comment.email}">${comment.email}</a>
     <p>${comment.body}</p>
-    <a class="btn btn-primary" href="/">Go back</a>
+    <a class="btn btn-primary" href="./">Go back</a>
   `;
