@@ -10,5 +10,5 @@ container.innerHTML = `
     <h1>${comment.name}</h1>
     <a href="mailto:${comment.email}">${comment.email}</a>
     <p>${comment.body}</p>
-    <a class="btn btn-primary" href="/index.html">Go back</a>
+    <a class="btn btn-primary" href="/SearchComments">Go back</a>
   `;
