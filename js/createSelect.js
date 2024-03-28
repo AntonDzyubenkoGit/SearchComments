@@ -5,7 +5,7 @@ const createOptions = (select, optionsList) => {
 
   const defaultOption = document.createElement('option');
   defaultOption.value = '';
-  defaultOption.text = 'Select an email address';
+  defaultOption.text = 'Select your e-mail';
   defaultOption.disabled = true;
   defaultOption.selected = true;
   select.append(defaultOption);
