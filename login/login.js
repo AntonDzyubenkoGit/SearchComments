@@ -22,7 +22,8 @@ authForm.addEventListener('submit', (e) => {
         localStorage.setItem('User', JSON.stringify(user.login));
         login.value = null;
         password.value = null;
-        window.location.href = '/';
+        // window.location.href = '/';
+        window.location.href = '/SearchComments';
       }
     });
   }
