@@ -15,3 +15,8 @@ const renderList = (data = [], commentsList) => {
 };
 
 export default renderList;
+
+/* 
+<a href="/comment/index.html?id=${item.id}" class="btn btn-primary mt-3">Go somewhere</a>
+<a href="/SearchComments/comment/index.html?id=${item.id}" class="btn btn-primary mt-3">Go somewhere</a> 
+*/
