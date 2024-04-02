@@ -55,6 +55,6 @@ if (isUser()) {
     cleanSearchBar(cleanBarBtn, commentsList, comments, renderList, searchBar);
     createSelect(searchBar, cleanBarBtn);
 } else {
-    // window.location.href = '/login';
-    window.location.href = '/SearchComments/login';
+    window.location.href = 'login';
+    // window.location.href = '/SearchComments/login';
 }
